@@ -1,0 +1,608 @@
+/* Basic reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(images/background.png);
+    background-repeat: repeat;
+    background-size: 250px;
+    background-color: #F4F4F4;
+}
+
+
+
+/* Header styling using BEM*/
+.header {
+    width: 100%;
+    min-height: 60vh; 
+    background: url(images/lobby.jpg) no-repeat center center/cover;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-page .header {
+    background: url(images/suite.jpg) no-repeat center center/cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.amenities-page .header {
+    background: url(images/headerimg.jpg) no-repeat center center/cover;
+    background-size: cover;
+    background-position: center bottom;   
+}
+
+.header__overlay {
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.header__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__title--small, .header__title--large {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #386641;
+}
+
+.header__title--small {
+    font-size: 1.5rem;
+}
+
+.header__title--large {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+.header__button {
+    padding: 10px 20px;
+    background-color: #6A994E;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+
+
+main {
+    margin-top: 20px;
+    padding-bottom: 150px;
+}
+
+
+
+/* Hotel description section using BEM */
+.hotel-description {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+    margin: 0;
+}
+
+.hotel-description__text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Room section using BEM */
+.room {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+}
+
+/* Room header */
+.room__header {
+    padding-top: 2rem;
+}
+
+/* Room title */
+.room__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #386641;
+}
+
+/* Room image wrapper for index page */
+.room__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+/* Room image */
+.room__image {
+    width: 90%; 
+    height: 90%; 
+    object-fit: cover;
+}
+
+/* Room button (for index page) */
+.room__button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #6A994E;
+    color: white;
+    padding: 1rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* Room description for Rooms page */
+.room__description {
+    position: static; /* Remove absolute positioning */
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional for extra styling */
+    margin-top: 1rem;
+}
+
+/* Room name for Rooms page */
+.room__name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Room text for Rooms page */
+.room__text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.booking__button {
+    display: block; /* Keeps it inline */
+    padding: 10px 20px; /* Same padding as the header button */
+    background-color: #6A994E;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 2rem; /* Adds space between the rooms and the button */
+}
+
+.booking__button-container {
+    display: flex; /* Use flexbox to center */
+    justify-content: center; /* Center horizontally */
+    margin-top: 2rem; /* Add margin above the button */
+}
+
+
+
+/* Container for booking form */
+.booking-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #214268;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #214268;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #386641;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #386641;
+}
+
+/* Hidden checkbox (used to trigger results visibility) */
+.hidden-checkbox {
+    display: none;
+}
+
+/* Search results (hidden by default) */
+#search-results {
+    display: none; 
+    margin-top: 30px;
+}
+
+.search-results {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.room-result {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.room-result p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.room-result button {
+    background-color: #6A994E;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.room-result button:hover {
+    background-color: #45a049;
+}
+
+/* Show results when checkbox is checked */
+.hidden-checkbox:checked ~ #search-results {
+    display: block;
+    margin-top: 40px;
+}
+
+/* Styling for the 'Search Rooms' button */
+.search-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 14px;
+    background-color: #6A994E;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.search-btn:hover {
+    background-color: #1a3d59;
+}
+
+
+
+/* Hamburger menu using BEM */
+.hamburger-menu {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hamburger-menu__checkbox {
+    display: none;
+}
+
+.hamburger-menu__icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #386641;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger-menu__icon i {
+    font-size: 1.8rem;
+}
+
+/* Hidden by default */
+.hamburger-menu__items {
+    display: none;
+    flex-direction: column;
+    background-color: #386641;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    font-size: 1rem;
+    width: 15em;
+}
+
+.hamburger-menu__item {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid #fff;
+    transition: background-color 0.3s ease;
+}
+
+/* Show menu items when checkbox is checked */
+.hamburger-menu__checkbox:checked + .hamburger-menu__icon + .hamburger-menu__items {
+    display: flex;
+}
+
+
+
+/* Footer layout with BEM */
+.footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-items: center;
+    align-items: center;
+    background-color: #386641;
+    color: white;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+.footer__container {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.footer__top {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.footer__logo {
+    width: 4rem; 
+}
+
+.footer__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.footer__brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer__location {
+    font-size: 1rem;
+}
+
+.footer__address {
+    display: none;
+}
+
+
+
+
+/* For screens larger than 1000px */
+@media (min-width: 1000px) {
+    .header {
+        background: url(images/lobby.jpg) no-repeat center center; 
+        background-size: cover;
+        background-position: center center; 
+    }
+
+    main {
+        margin-top: 20px;
+        padding-bottom: 250px;
+    }
+
+    .main__container {
+        width: 70%; 
+        margin: 0 auto; 
+        padding: 40px; 
+    }
+
+    .booking-page .main__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .booking-container {
+        width: 50%; 
+    }
+
+    .room {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+        margin-top: 1rem; 
+    }
+
+    .room__header {
+        grid-column: span 3; 
+        text-align: center;
+        padding: 20px;
+    }
+
+    .room__title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-top: 10px;
+        padding-bottom: 20px;
+        color: #386641; 
+    }
+
+    .room__image-wrapper {
+        width: 100%; 
+        height: 0; 
+        padding-top: 100%; 
+        position: relative;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .room__image {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+    }
+
+    .room__description {
+        position: absolute;
+        bottom: 0; 
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .hamburger-menu {
+        bottom: 200px;
+    }
+
+    
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr; 
+        justify-items: center; 
+        padding: 20px 0; 
+    }
+
+    .footer__container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; 
+    }
+
+    .footer__top {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        gap: 20px; 
+    }
+
+    .footer__logo {
+        width: 5rem; 
+    }
+
+    .footer__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        text-align: left;
+    } 
+
+    .footer__address {
+        display: block;
+        font-size: 1rem;
+        margin-top: 10px;
+        font-family: 'Roboto', sans-serif;
+        text-align: center; 
+    }
+}

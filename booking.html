@@ -1,0 +1,135 @@
+<!--
+Project: Bonz.ai - The future of hotel stays (Assignment from Folkuniversitetet Göteborg)
+Created by: Agnes Rytiniemi
+Date: [December 6, 2024]
+Description: This is the book-a-room page for Bonz.ai.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonz.ai - The future of hotel stays</title>
+    <link rel="icon" href="images/bonz.ai_logo.png" type="image/png">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+<!--Fonts from Google-->
+<!--'Poppins'-->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!--'Roboto'-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body class="booking-page">
+    <header class="header">
+        <div class="header__overlay">
+            <span class="header__title--large">Book a Room</span>
+        </div>
+    </header>
+    <main>
+        <section class="main__container">
+
+<!--The form for booking a room-->
+            <div class="booking-container">
+                <h1>Book Your Stay</h1>
+
+                <!-- Hidden checkbox that controls visibility of search results -->
+                <input type="checkbox" id="search-toggle" class="hidden-checkbox">
+                
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="check-in">Check-in Date:</label>
+                        <input type="date" id="check-in" name="check-in" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="check-out">Check-out Date:</label>
+                        <input type="date" id="check-out" name="check-out" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="room-type">Room Type:</label>
+                        <select id="room-type" name="room-type" required>
+                            <option value="single">Single Room</option>
+                            <option value="double">Double Room</option>
+                            <option value="suite">Suite</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Number of Guests:</label>
+                        <input type="number" id="guests" name="guests" min="1" required>
+                    </div>
+
+                    <!-- Button triggers the checkbox (to show results) -->
+                    <label for="search-toggle" class="search-btn">Search Rooms</label>
+                </form>
+
+                <!-- Search results section (visible when checkbox is checked) -->
+                <div id="search-results" class="search-results">
+                    <h2>Available Rooms</h2>
+                    <div class="room-result">
+                        <p><strong>Room Type:</strong> Single Room</p>
+                        <p><strong>Price:</strong> $100 per night</p>
+                        <p><strong>Availability:</strong> Available from Dec 10 to Dec 15</p>
+                        <button>Book Now</button>
+                    </div>
+                    <div class="room-result">
+                        <p><strong>Room Type:</strong> Double Room</p>
+                        <p><strong>Price:</strong> $150 per night</p>
+                        <p><strong>Availability:</strong> Available from Dec 10 to Dec 15</p>
+                        <button>Book Now</button>
+                    </div>
+                    <div class="room-result">
+                        <p><strong>Room Type:</strong> Suite</p>
+                        <p><strong>Price:</strong> $250 per night</p>
+                        <p><strong>Availability:</strong> Available from Dec 10 to Dec 15</p>
+                        <button>Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Hamburger menu with BEM -->
+        <div class="hamburger-menu">
+            <!-- Checkbox to toggle menu visibility -->
+            <input type="checkbox" id="menu-toggle" class="hamburger-menu__checkbox">
+            
+            <!-- Hamburger icon -->
+            <label for="menu-toggle" class="hamburger-menu__icon">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <!-- Menu items -->
+            <div class="hamburger-menu__items">
+                <a href="index.html" class="hamburger-menu__item">Home</a>
+                <a href="amenities.html" class="hamburger-menu__item">Amenities</a>
+                <a href="rooms.html" class="hamburger-menu__item">Rooms</a>
+                <a href="booking.html" class="hamburger-menu__item">Book Room</a>
+            </div>
+        </div>
+    </main>
+<!--BEM has been used to style the footer of the page in mobile view-->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <img src="images/bonz.ai_logo.png" alt="Bonz.ai Logo" class="footer__logo">
+                <div class="footer__text">
+                    <p class="footer__brand">Bonz.ai</p>
+                    <p class="footer__location">Stockholm</p>
+                </div>
+            </div>
+            <div class="footer__address">
+                <p>1234 Street Name, City, Country</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
