@@ -16,3 +16,8 @@ The background image was created in Adobe Illustrator, using a template from [Ad
 The gym image is from [https://www.pexels.com/](https://www.pexels.com/sv-se/foto/1954524/) by William Choquette.
 
 The library image is from [https://www.pexels.com/](https://www.pexels.com/sv-se/foto/1907784/) by Ricky Esquivel.
+
+## Övrigt
+Kommentarer är på engelska då jag fått lära mig att det är så man oftast gör i arbetslivet.
+
+Jag har använt mig av ChatGPT som hjälpmedel vid problemlösning, men själva koden i denna uppgift är skapad av mig och inte genererad av verktyget.
